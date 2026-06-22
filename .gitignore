@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.Rhistory
+work/
+outputs/
+data/raw/
+.ipynb_checkpoints/
+*.log
+*.tmp

@@ -1,0 +1,26 @@
+1. Elegir idea definitiva.
+2. Buscar 2-3 datasets abiertos.
+3. Descargar datos.
+4. Abrir Colab Pro.
+5. Limpiar datasets con pandas.
+6. Unir datos por barrio, distrito o coordenadas.
+7. Crear variables nuevas.
+8. Normalizar variables.
+9. Crear índice urbano.
+10. Crear ranking.
+11. Probar clustering o análisis extra.
+12. Exportar CSV limpio.
+13. Crear app.py con Streamlit.
+14. Añadir menú lateral.
+15. Añadir filtros.
+16. Añadir gráficos.
+17. Añadir mapa.
+18. Añadir sección de metodología.
+19. Añadir conclusiones.
+20. Crear requirements.txt.
+21. Crear README.md.
+22. Subir todo a GitHub.
+23. Publicar en Streamlit Cloud.
+24. Probar app desde cero.
+25. Grabar vídeo demo.
+26. Subir enlaces a PoliformaT.
