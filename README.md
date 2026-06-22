@@ -5,9 +5,9 @@ environmental stress and civic complaints in València.**
 
 ## Submission Links
 
-- Online app: **TODO: add Streamlit Cloud link**
+- Online app: https://edm-valencia-urban-equity-compass.streamlit.app
 - Video demo: **TODO: add demo video link**
-- Source code: **TODO: add GitHub repository link**
+- Source code: https://github.com/muedraj/edm-valencia-urban-equity-compass
 
 ## Author and Course
 
