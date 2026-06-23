@@ -55,21 +55,21 @@ Portal by running:
 
 ```bash
 python notebooks/01_download_and_inspect_data.py
+```
 
 This script retrieves the original resources, preserves their real column names
-and saves them locally in data/raw/.
+and saves them locally in `data/raw/`.
 
-| Official dataset | Generated raw file | Format | Rows inspected | Purpose |
-| --- | --- | --- | ---: | --- |
-| [Barris / Barrios](https://opendata.vlci.valencia.es/dataset/barris-barrios) | `barris_barrios.geojson` | GeoJSON | 88 | Canonical neighbourhood boundaries |
-| [Districtes / Distritos](https://opendata.vlci.valencia.es/dataset/districtes-distritos) | `districtes_distritos.geojson` | GeoJSON | 22 | District reference and validation |
-| [Espais Verds / Espacios Verdes](https://opendata.vlci.valencia.es/dataset/espais-verds-espacios-verdes) | `espais_verds.geojson` | GeoJSON | 807 | Green-space polygons |
-| [Mapa soroll nit / Mapa ruido noche](https://opendata.vlci.valencia.es/dataset/mapa-soroll-nit-mapa-ruido-noche) | `mapa_soroll_nit.geojson` | GeoJSON | 54 | Night-noise polygons |
-| [Quejas y Sugerencias](https://opendata.vlci.valencia.es/dataset/total-castellano) | `quejas_sugerencias.csv` | CSV | 90,005 | Citizen complaint records |
+| Dataset | Raw file | Format | Rows | Purpose |
+| --- | --- | ---: | ---: | --- |
+| Barris / Barrios | `barris_barrios.geojson` | GeoJSON | 88 | Neighbourhood boundaries |
+| Districtes / Distritos | `districtes_distritos.geojson` | GeoJSON | 22 | District reference |
+| Espais Verds | `espais_verds.geojson` | GeoJSON | 807 | Green-space polygons |
+| Mapa de ruido nocturno | `mapa_soroll_nit.geojson` | GeoJSON | 54 | Night-noise polygons |
+| Quejas y Sugerencias | `quejas_sugerencias.csv` | CSV | 90,005 | Citizen complaints |
 
-The inspection workflow records the original schemas, data types, missing values, identifiers and geometry information in:
-
-docs/data_inspection_report.md
+The complete inspection of the original schemas, missing values, identifiers
+and geometries is available in `docs/data_inspection_report.md`.
 
 The complete transformation process is therefore traceable:
 
@@ -106,7 +106,6 @@ python scripts/build_indicators.py
 
 Raw files are excluded from Git because they can be regenerated from their official sources and would unnecessarily duplicate external data.
 The download script, source identifiers, inspection report and processing scripts are included so that the complete pipeline can be reviewed and reproduced.
-```
 
 ## Methodology
 
