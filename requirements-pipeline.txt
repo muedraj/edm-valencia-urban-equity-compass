@@ -2,3 +2,6 @@ pandas
 geopandas
 scikit-learn
 numpy
+shapely
+pyproj
+fiona
