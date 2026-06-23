@@ -73,39 +73,48 @@ and geometries is available in `docs/data_inspection_report.md`.
 
 The complete transformation process is therefore traceable:
 
+```text
 Official open-data sources
         |
         v
 notebooks/01_download_and_inspect_data.py
         |
         v
-data/raw/                         Original downloaded files
+data/raw/
+Original downloaded files
         |
         v
 scripts/build_master_table.py
         |
         v
-neighbourhood_master_table.csv   Aggregated neighbourhood indicators
+neighbourhood_master_table.csv
 neighbourhood_master.geojson
         |
         v
 scripts/build_indicators.py
         |
         v
-neighbourhood_indicators.csv     Normalized scores, rankings and clusters
+neighbourhood_indicators.csv
 neighbourhood_indicators.geojson
         |
         v
-app.py                            Deployed Streamlit application
+app.py
+Deployed Streamlit application
+```
 
-To reproduce the processed outputs from the downloaded raw data:
+To reproduce the processed outputs from the downloaded raw data, run the
+following commands from the project root:
 
+```bash
 python notebooks/01_download_and_inspect_data.py
 python scripts/build_master_table.py
 python scripts/build_indicators.py
+```
 
-Raw files are excluded from Git because they can be regenerated from their official sources and would unnecessarily duplicate external data.
-The download script, source identifiers, inspection report and processing scripts are included so that the complete pipeline can be reviewed and reproduced.
+Raw files are excluded from Git because they can be regenerated from their
+official sources and would unnecessarily duplicate external data. The download
+script, source identifiers, inspection report and processing scripts are
+included so that the complete pipeline can be reviewed and reproduced.
 
 ## Methodology
 
