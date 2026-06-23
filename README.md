@@ -11,7 +11,7 @@ environmental stress and civic complaints in València.**
 
 ## Author and Course
 
-- Author: **TODO: add student name**
+- Author: **Jorge Muedra Vela**
 - Course: **EDM**
 - Assignment: Final project, interactive urban data application
 
