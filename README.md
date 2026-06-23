@@ -101,8 +101,8 @@ onto two different neighbourhood geometries.
 ├── requirements.txt
 ├── README.md
 ├── data/
-│   ├── raw/
-│   └── processed/
+│   ├── raw/          # generated locally and ignored in GitHub
+│   └── processed/    # processed files used by the deployed app
 │       ├── neighbourhood_master_table.csv
 │       ├── neighbourhood_master.geojson
 │       ├── neighbourhood_indicators.csv
@@ -128,22 +128,26 @@ onto two different neighbourhood geometries.
 
 ## How to Run Locally
 
+The deployed Streamlit app only needs the lightweight dependencies listed in
+`requirements.txt`.
+
 Install the app dependencies:
 
 ```bash
 pip install -r requirements.txt
-```
 
 Run the Streamlit app:
 
-```bash
 streamlit run app.py
-```
 
-Open:
+If the streamlit command is not recognized on Windows, run:
 
-```text
-http://localhost:8501
+python -m streamlit run app.py
+
+To reproduce the full preprocessing and geospatial pipeline, install the
+additional pipeline dependencies:
+
+pip install -r requirements-pipeline.txt
 ```
 
 ## Deployment
