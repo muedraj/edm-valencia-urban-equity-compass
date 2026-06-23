@@ -45,6 +45,69 @@ The current version uses official València open datasets:
 No additional datasets are required to run the deployed app. The app reads the
 processed files stored in `data/processed/`.
 
+## Raw Data and Reproducibility
+
+The repository includes the processed datasets required by the deployed
+application, but the original raw files are intentionally not stored in GitHub.
+
+All raw datasets can be downloaded again from the official València Open Data
+Portal by running:
+
+```bash
+python notebooks/01_download_and_inspect_data.py
+
+This script retrieves the original resources, preserves their real column names
+and saves them locally in data/raw/.
+
+| Official dataset | Generated raw file | Format | Rows inspected | Purpose |
+| --- | --- | --- | ---: | --- |
+| [Barris / Barrios](https://opendata.vlci.valencia.es/dataset/barris-barrios) | `barris_barrios.geojson` | GeoJSON | 88 | Canonical neighbourhood boundaries |
+| [Districtes / Distritos](https://opendata.vlci.valencia.es/dataset/districtes-distritos) | `districtes_distritos.geojson` | GeoJSON | 22 | District reference and validation |
+| [Espais Verds / Espacios Verdes](https://opendata.vlci.valencia.es/dataset/espais-verds-espacios-verdes) | `espais_verds.geojson` | GeoJSON | 807 | Green-space polygons |
+| [Mapa soroll nit / Mapa ruido noche](https://opendata.vlci.valencia.es/dataset/mapa-soroll-nit-mapa-ruido-noche) | `mapa_soroll_nit.geojson` | GeoJSON | 54 | Night-noise polygons |
+| [Quejas y Sugerencias](https://opendata.vlci.valencia.es/dataset/total-castellano) | `quejas_sugerencias.csv` | CSV | 90,005 | Citizen complaint records |
+
+The inspection workflow records the original schemas, data types, missing values, identifiers and geometry information in:
+
+docs/data_inspection_report.md
+
+The complete transformation process is therefore traceable:
+
+Official open-data sources
+        |
+        v
+notebooks/01_download_and_inspect_data.py
+        |
+        v
+data/raw/                         Original downloaded files
+        |
+        v
+scripts/build_master_table.py
+        |
+        v
+neighbourhood_master_table.csv   Aggregated neighbourhood indicators
+neighbourhood_master.geojson
+        |
+        v
+scripts/build_indicators.py
+        |
+        v
+neighbourhood_indicators.csv     Normalized scores, rankings and clusters
+neighbourhood_indicators.geojson
+        |
+        v
+app.py                            Deployed Streamlit application
+
+To reproduce the processed outputs from the downloaded raw data:
+
+python notebooks/01_download_and_inspect_data.py
+python scripts/build_master_table.py
+python scripts/build_indicators.py
+
+Raw files are excluded from Git because they can be regenerated from their official sources and would unnecessarily duplicate external data.
+The download script, source identifiers, inspection report and processing scripts are included so that the complete pipeline can be reviewed and reproduced.
+```
+
 ## Methodology
 
 1. Download raw data from official open data exports.
