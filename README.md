@@ -146,16 +146,18 @@ Open:
 http://localhost:8501
 ```
 
-## Deployment Instructions
+## Deployment
 
-The intended deployment target is **Streamlit Cloud**.
+The app is deployed on Streamlit Cloud:
 
-1. Push the repository to GitHub.
-2. Confirm `requirements.txt` is present at the repository root.
-3. Confirm the processed files exist in `data/processed/`.
-4. In Streamlit Cloud, create a new app from the GitHub repository.
-5. Set the entry point to `app.py`.
-6. Deploy and add the public app URL to this README.
+https://edm-valencia-urban-equity-compass.streamlit.app
+
+Deployment configuration:
+
+- Repository: `muedraj/edm-valencia-urban-equity-compass`
+- Branch: `main`
+- Main file: `app.py`
+- Dependencies file: `requirements.txt`
 
 ## Processed Outputs
 
