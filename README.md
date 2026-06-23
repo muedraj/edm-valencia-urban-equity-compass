@@ -206,21 +206,40 @@ Install the app dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
 
-Run the Streamlit app:
+Run the Streamlit application:
 
+```bash
 streamlit run app.py
+```
 
-If the streamlit command is not recognized on Windows, run:
+If the `streamlit` command is not recognized on Windows, run:
 
+```bash
 python -m streamlit run app.py
+```
 
-To reproduce the full preprocessing and geospatial pipeline, install the
-additional pipeline dependencies:
+The application will be available at:
 
+```text
+http://localhost:8501
+```
+
+To reproduce the complete preprocessing and geospatial pipeline, install the
+additional dependencies:
+
+```bash
 pip install -r requirements-pipeline.txt
 ```
 
+Then run:
+
+```bash
+python notebooks/01_download_and_inspect_data.py
+python scripts/build_master_table.py
+python scripts/build_indicators.py
+```
 ## Deployment
 
 The app is deployed on Streamlit Cloud:
